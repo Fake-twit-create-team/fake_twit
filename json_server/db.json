@@ -1,0 +1,31 @@
+{
+  "POST": [
+    {
+      "id": 1,
+      "POST_USER_ID": "testuser",
+      "POST_DATETIME": "20220419 13:00",
+      "POST_TEXT": "TEST_POST_TEXT",
+      "REPLY_POST_ID": null,
+      "POST_IMAGE_ID": null
+    }
+  ],
+  "FAVORITE": [
+    {
+      "id": 1,
+      "POST_ID": 1,
+      "USER_ID": "testuser"
+    },
+    {
+      "POST_ID": 1,
+      "USER_ID": "testuser2",
+      "id": 2
+    }
+  ],
+  "USER": {
+    "id": 1,
+    "USER_ID": "testuser",
+    "PASSWORD": "password",
+    "MAILADDRES": "test@test.com",
+    "USER_NAME": "test_user_name"
+  }
+}
