@@ -1,20 +1,12 @@
 <template>
   <h1>ツイート一覧</h1> 
   <div class="searchall">
-    <!-- <div v-for="twitte in twittes"> 
-      <p> {{ twitte.userId }} {{ twitte.date }} </p>
-      <p> {{ twitte.context }} </p> -->
-    <div v-for="n of 10" :key="n">
-      <p v-bind:class="userId">ユーザID 登録日時</p>
-      <p id="context">本文</p>
-      <button>いいね</button>
-    </div>
+    <p id="data"></p>
   </div>
 
 </template>
 
-<script></script>
-
+<script src="../js/searchAll.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .searchall{
