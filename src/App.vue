@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="文言を変更してみた"/>
+  <SearchAll />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchAll from './components/SearchAll.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SearchAll
   }
 }
 </script>
