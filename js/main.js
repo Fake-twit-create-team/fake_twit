@@ -26,6 +26,7 @@ const app = Vue.createApp({
         }
       });
     },
+    // FAVORITEテーブルの登録
     createFavorite: function(n) {
       console.log('Clicked!' + n);
       fetch('http://localhost:3000/FAVORITE', {
@@ -39,7 +40,9 @@ const app = Vue.createApp({
         })
       });
       console.log(this.tweets[n-1].post_fav_cnt);
+      // いいねカウント数のインクリメント
       this.tweets[n-1].post_fav_cnt += 1
+      // POSTテーブルの「いいねカウント数」の更新
       fetch('http://localhost:3000/POST/' + n, {
         method: 'PATCH',
         headers: {
