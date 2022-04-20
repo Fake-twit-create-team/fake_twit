@@ -3,7 +3,7 @@
     {
       "id": 1,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 13:00",
+      "POST_DATETIME": "2022/04/19 13:00",
       "POST_TEXT": "TEST_POST_TEXT",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 14:00",
+      "POST_DATETIME": "2022/04/19 14:00",
       "POST_TEXT": "いい天気ですね",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 15:00",
+      "POST_DATETIME": "2022/04/19 15:00",
       "POST_TEXT": "美味しいお菓子知りたい。。。",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 16:00",
+      "POST_DATETIME": "2022/04/19 16:00",
       "POST_TEXT": "眠いｚｚｚ",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 17:00",
+      "POST_DATETIME": "2022/04/19 17:00",
       "POST_TEXT": "そろそろ定時だ",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 18:00",
+      "POST_DATETIME": "2022/04/19 18:00",
       "POST_TEXT": "定時なんて無かった",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -51,7 +51,7 @@
     {
       "id": 7,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 19:00",
+      "POST_DATETIME": "2022/04/19 19:00",
       "POST_TEXT": "進捗だめです。あきらめて帰ります",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -59,7 +59,7 @@
     {
       "id": 8,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 20:00",
+      "POST_DATETIME": "2022/04/19 20:00",
       "POST_TEXT": "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -67,7 +67,7 @@
     {
       "id": 9,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 21:00",
+      "POST_DATETIME": "2022/04/19 21:00",
       "POST_TEXT": "１",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
@@ -75,7 +75,7 @@
     {
       "id": 10,
       "POST_USER_ID": "testuser",
-      "POST_DATETIME": "20220419 22:00",
+      "POST_DATETIME": "2022/04/19 22:00",
       "POST_TEXT": "寝る",
       "REPLY_POST_ID": null,
       "POST_IMAGE_ID": null
