@@ -19,12 +19,14 @@ const app = Vue.createApp({
             post_id: data[i].id,
             post_user_id: data[i].POST_USER_ID,
             post_datetime: data[i].POST_DATETIME,
-            post_text: data[i].POST_TEXT
+            post_text: data[i].POST_TEXT,
+            post_fav_cnt: data[i].POST_FAV_CNT
           };
           this.tweets.push(tweet);
         }
       });
     },
+    // FAVORITEテーブルの登録
     createFavorite: function(n) {
       console.log('Clicked!' + n);
       fetch('http://localhost:3000/FAVORITE', {
@@ -33,8 +35,21 @@ const app = Vue.createApp({
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          'POST_ID': this.tweets.post_id,
-          'USER_ID': this.tweets.post_user_id
+          'POST_ID': this.tweets[n-1].post_id,
+          'USER_ID': this.tweets[n-1].post_user_id
+        })
+      });
+      console.log(this.tweets[n-1].post_fav_cnt);
+      // いいねカウント数のインクリメント
+      this.tweets[n-1].post_fav_cnt += 1
+      // POSTテーブルの「いいねカウント数」の更新
+      fetch('http://localhost:3000/POST/' + n, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          'POST_FAV_CNT': this.tweets[n-1].post_fav_cnt
         })
       });
     }
