@@ -1,4 +1,8 @@
-#postAll{
+#app{
+  text-align: center;
+}
+
+#post{
   padding: 1em 1em;
   margin: auto;
   color: #5d627b;

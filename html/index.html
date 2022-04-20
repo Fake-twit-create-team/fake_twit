@@ -9,13 +9,13 @@
   </head>
   
   <body>
-    <h1>ツイート一覧</h1> 
     <div id="app">
-      <button v-on:click="selectPost()">一覧表示</button>
-      <div id="postAll" v-for="tweet in tweets">
+      <h1>ツイート一覧</h1>
+      <a href="twitCreate.html">新規作成</a>
+      <div id="post" v-for="tweet in tweets">
         <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
         <p>{{ tweet.post_text }}</p>
-        <button v-on:click="createFavorite(tweet.post_id)">いいね</button>
+        <button v-on:click="createFavorite(tweet.soeji)">いいね</button>
         {{ tweet.post_fav_cnt }}
       </div>
       <!-- <p>{{ $data }}</p> -->
