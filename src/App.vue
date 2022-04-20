@@ -1,14 +1,18 @@
 <template>
+  <TwitCreate />
   <SearchAll />
+  
 </template>
 
 <script>
 import SearchAll from './components/SearchAll.vue'
+import TwitCreate from './components/TwitCreate.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchAll
+    SearchAll,
+    TwitCreate
   }
 }
 </script>
