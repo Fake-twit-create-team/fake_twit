@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/twitCreate.css">
+</head>
+
+
+<body>
+
+    <div id="twitCreate">
+        <h1>ツイート投稿</h1> 
+        <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
+        <!-- <input type="text" id="text" v-model="text"> -->
+        <div id="error">
+            {{ message }}
+        </div>
+        <button v-on:click="onClick()" type="submit" id="submit">ツイート</button>
+    </div>
+
+    
+    <script src="https:/unpkg.com/vue@3.1.5"></script>
+    <script src="../js/twitCreate.js"></script>
+</body>
+</html>
+  
