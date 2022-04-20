@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>ツイート一覧</title>
+  </head>
+  
+  <body>
+    <h1>ツイート一覧</h1> 
+    <div id="app">
+      <button v-on:click="selectPost()">一覧表示</button>
+      <div id="postAll" v-for="tweet in tweets">
+        <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
+        <p>{{ tweet.post_text }}</p>
+        <button v-on:click="createFavorite(n)">いいね</button>
+      </div>
+      <!-- <p>{{ $data }}</p> -->
+    </div>
+    <script src="https:/unpkg.com/vue@3.1.5"></script>
+    <script src="../js/main.js"></script>
+  </body>
+  </html>
+  
+  
