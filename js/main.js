@@ -32,28 +32,57 @@ const app = Vue.createApp({
           post_datetime: tweetListPre[i].POST_DATETIME,
           post_text: tweetListPre[i].POST_TEXT,
           post_fav_cnt: tweetListPre[i].POST_FAV_CNT,
-          url: "twitCreate.html?id="+tweetListPre[i].id
+          url: "twitCreate.html?id="+tweetListPre[i].id,
+          is_edit_mode: false,
+          post_text_bef_edit: data[i].POST_TEXT,
+          message: ''
         };
         this.tweets.push(tweet);
         n++;
-        // for(var n=0; n<tweetListCil.length; n++){
-        //   if(tweetListCil[n].REPLY_POST_ID == tweetListPre[i].id){
-        //     let tweet = {
-        //       soeji: n,
-        //       post_id: tweetListCil[n].id,
-        //       post_user_id: tweetListCil[n].POST_USER_ID,
-        //       post_datetime: tweetListCil[n].POST_DATETIME,
-        //       post_text: tweetListCil[n].POST_TEXT,
-        //       post_fav_cnt: tweetListCil[n].POST_FAV_CNT
-        //     };
-        //     this.tweets.push(tweet);
-        //     n++;
-        //   }
-        // }
       }
     });
   },
   methods: {
+    // 編集モードのオンオフ切替
+    changeMode: function(n){
+      // 編集モードをオフ→オン
+      this.tweets[n].is_edit_mode = !(this.tweets[n].is_edit_mode)
+    },
+    // 編集モードをやめる
+    quitEdit: function(n){
+      // テキストエリアに編集前の本文を格納
+      this.tweets[n].post_text = this.tweets[n].post_text_bef_edit
+      // エラーメッセージをクリア
+      this.tweets[n].message = ''
+      // 編集モードをオン→オフ
+      this.tweets[n].is_edit_mode = !(this.tweets[n].is_edit_mode)
+    },
+    // ツイート本文の更新
+    updateText: function(n) {
+      // 文字数チェック
+      if(this.tweets[n].post_text.length > 140){
+        this.tweets[n].message = '140文字以内で入力してください'
+        return
+      }
+      if(this.tweets[n].post_text.length == 0){
+          this.tweets[n].message = '文字数0の状態で投稿できません'
+          return
+      }
+      // ツイート本文の更新
+      fetch('http://localhost:3000/POST/' + this.tweets[n].post_id, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          'POST_TEXT': this.tweets[n].post_text
+        })
+      });
+      // エラーメッセージをクリア
+      this.tweets[n].message = ''
+      // 編集モードをオン→オフ
+      this.tweets[n].is_edit_mode = !(this.tweets[n].is_edit_mode)
+    },
     // FAVORITEテーブルの登録
     createFavorite: function(n) {
       console.log('Clicked!' + n);
