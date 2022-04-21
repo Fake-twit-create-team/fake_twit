@@ -1,6 +1,7 @@
 const app = Vue.createApp({
   data: () => ({
-    threads: [],
+    tweets: [],
+    threads: []
   }),
   mounted: function() {
     console.log('Clicked!')
@@ -41,8 +42,9 @@ const app = Vue.createApp({
           post_text_bef_edit: data[i].POST_TEXT,
           message: ''
         };
-        thread.threadUrl = "twitCreate.html?id="+tweetListPre[i].id
+        thread.threadUrl = "twitCreate.html?id="+tweetListPre[i].id;
         thread.tweets.push(tweet);
+        this.tweets.push(tweet);
         n++;
         for(var m=0; m<tweetListCil.length; m++){
           if(tweetListCil[m].REPLY_POST_ID == tweetListPre[i].id){
@@ -55,6 +57,7 @@ const app = Vue.createApp({
               post_fav_cnt: tweetListCil[m].POST_FAV_CNT
             };
             thread.tweets.push(tweet);
+            this.tweets.push(tweet);
             n++;
           }
         }
