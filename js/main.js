@@ -32,24 +32,24 @@ const app = Vue.createApp({
           post_datetime: tweetListPre[i].POST_DATETIME,
           post_text: tweetListPre[i].POST_TEXT,
           post_fav_cnt: tweetListPre[i].POST_FAV_CNT,
-          // url: "twitCreate.html?id="+tweetListPre[i].id
+          url: "twitCreate.html?id="+tweetListPre[i].id
         };
         this.tweets.push(tweet);
         n++;
-        for(var n=0; n<tweetListCil.length; n++){
-          if(tweetListCil[n].REPLY_POST_ID == tweetListPre[i].id){
-            let tweet = {
-              soeji: n,
-              post_id: tweetListCil[n].id,
-              post_user_id: tweetListCil[n].POST_USER_ID,
-              post_datetime: tweetListCil[n].POST_DATETIME,
-              post_text: tweetListCil[n].POST_TEXT,
-              post_fav_cnt: tweetListCil[n].POST_FAV_CNT
-            };
-            this.tweets.push(tweet);
-            n++;
-          }
-        }
+        // for(var n=0; n<tweetListCil.length; n++){
+        //   if(tweetListCil[n].REPLY_POST_ID == tweetListPre[i].id){
+        //     let tweet = {
+        //       soeji: n,
+        //       post_id: tweetListCil[n].id,
+        //       post_user_id: tweetListCil[n].POST_USER_ID,
+        //       post_datetime: tweetListCil[n].POST_DATETIME,
+        //       post_text: tweetListCil[n].POST_TEXT,
+        //       post_fav_cnt: tweetListCil[n].POST_FAV_CNT
+        //     };
+        //     this.tweets.push(tweet);
+        //     n++;
+        //   }
+        // }
       }
     });
   },
