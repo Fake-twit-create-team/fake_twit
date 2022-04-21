@@ -7,8 +7,15 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     margin: auto;
+    width: 50%;
 }
 
 #userId{
-    width: 300px;
+    position: relative;
+    width: 40%;
+}
+
+#text{
+    position: relative;
+    width: 100%;
 }
