@@ -3,7 +3,6 @@
 }
 
 #post{
-  text-align: left;
   padding: 1em 1em;
   margin: auto;
   color: #5d627b;
@@ -11,5 +10,13 @@
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   width: 50%;
-  white-space: pre-line;
+}
+
+#text {
+  position: relative;
+  width:100%;
+}
+
+#error{
+  color: red;
 }

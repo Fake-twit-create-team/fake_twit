@@ -5,47 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/twitCreate.css">
     <title>ツイート一覧</title>
   </head>
   
   <body>
-    <div id="twitCreate">
-        <p id="userIdBrobk">
-            <label for="userId">ユーザ名：</label>
-            <input type="text" id="userId" v-model="postUserId">
-            <div id="error">
-                {{ userErrorMessage }}
-            </div>
-        </p>
-        <p>
-            <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
-        </p>
-        <div id="error">
-            {{ message }}
-        </div>
-        <button v-on:click="onClick()" type="submit" id="submit">ツイート</button>
-        <br>
-    </div>
-    <hr>
-
-
     <div id="app">
       <h1>ツイート一覧</h1>
+      <a href="twitCreate.html">新規作成</a>
       <div id="post" v-for="tweet in tweets">
         <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
-        <p>{{ tweet.post_text }}</p>
-        <div id="button">
-          <button v-on:click="createFavorite(tweet.soeji)">いいね</button>
-          {{ tweet.post_fav_cnt }}
-          <a :href=tweet.url>返信</a>
-        </div>
+        <!-- <button onclick="location.href='twitUpdate.html'">編集</button> -->
+        <p v-if=!(tweet.is_edit_mode)>
+          {{ tweet.post_text }}
+          <button v-on:click="changeMode(tweet.soeji)">編集</button>
+        </p>
+        <p v-else>
+          <textarea id="text" rows="6" v-model="tweet.post_text"></textarea>
+          <span id="error">{{ tweet.message }}</span>
+          <button v-on:click="updateText(tweet.soeji)">投稿</button>
+          <button v-on:click="quitEdit(tweet.soeji)">やめる</button>
+        </p>
+        <button v-on:click="createFavorite(tweet.soeji)">いいね</button>
+        {{ tweet.post_fav_cnt }}
       </div>
       <!-- <p>{{ $data }}</p> -->
     </div>
     <script src="https:/unpkg.com/vue@3.1.5"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/twitCreate.js"></script>
   </body>
   </html>
   
