@@ -1,6 +1,6 @@
 const app = Vue.createApp({
   data: () => ({
-    tweets: []
+    threads: [],
   }),
   mounted: function() {
     console.log('Clicked!')
@@ -25,31 +25,36 @@ const app = Vue.createApp({
       // console.log(tweetListPre.length)
       // console.log(tweetListCil.length)
       for(var i=tweetListPre.length-1; i>=0; i--){
+        let thread = {
+          tweets: [],
+          threadUrl: ""
+        };
         let tweet = {
           soeji: n,
           post_id: tweetListPre[i].id,
           post_user_id: tweetListPre[i].POST_USER_ID,
           post_datetime: tweetListPre[i].POST_DATETIME,
           post_text: tweetListPre[i].POST_TEXT,
-          post_fav_cnt: tweetListPre[i].POST_FAV_CNT,
-          url: "twitCreate.html?id="+tweetListPre[i].id
+          post_fav_cnt: tweetListPre[i].POST_FAV_CNT
         };
-        this.tweets.push(tweet);
+        thread.threadUrl = "twitCreate.html?id="+tweetListPre[i].id
+        thread.tweets.push(tweet);
         n++;
-        // for(var n=0; n<tweetListCil.length; n++){
-        //   if(tweetListCil[n].REPLY_POST_ID == tweetListPre[i].id){
-        //     let tweet = {
-        //       soeji: n,
-        //       post_id: tweetListCil[n].id,
-        //       post_user_id: tweetListCil[n].POST_USER_ID,
-        //       post_datetime: tweetListCil[n].POST_DATETIME,
-        //       post_text: tweetListCil[n].POST_TEXT,
-        //       post_fav_cnt: tweetListCil[n].POST_FAV_CNT
-        //     };
-        //     this.tweets.push(tweet);
-        //     n++;
-        //   }
-        // }
+        for(var m=0; m<tweetListCil.length; m++){
+          if(tweetListCil[m].REPLY_POST_ID == tweetListPre[i].id){
+            let tweet = {
+              soeji: n,
+              post_id: tweetListCil[m].id,
+              post_user_id: tweetListCil[m].POST_USER_ID,
+              post_datetime: tweetListCil[m].POST_DATETIME,
+              post_text: tweetListCil[m].POST_TEXT,
+              post_fav_cnt: tweetListCil[m].POST_FAV_CNT
+            };
+            thread.tweets.push(tweet);
+            n++;
+          }
+        }
+        this.threads.push(thread);
       }
     });
   },

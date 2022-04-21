@@ -10,18 +10,18 @@
   
   <body>
     <div id="app">
-      <h1>ツイート一覧</h1>
       <a href="twitCreate.html">新規作成</a>
-      <div id="post" v-for="tweet in tweets">
-        <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
-        <p>{{ tweet.post_text }}</p>
-        <div id="button">
+      <div id="thread" v-for="thread in threads">
+        <div id="post" v-for=" tweet in thread.tweets">
+          <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
+          <p>{{ tweet.post_text }}</p>
           <button v-on:click="createFavorite(tweet.soeji)">いいね</button>
           {{ tweet.post_fav_cnt }}
-          <a :href=tweet.url>返信</a>
         </div>
+        <br>
+        <a :href=thread.threadUrl>返信</a>
       </div>
-      <!-- <p>{{ $data }}</p> -->
+    {{$data}}
     </div>
     <script src="https:/unpkg.com/vue@3.1.5"></script>
     <script src="../js/main.js"></script>
