@@ -6,5 +6,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    margin-top: 60px;
-  }
+    margin: auto;
+    width: 50%;
+}
+
+#userId{
+    position: relative;
+    width: 40%;
+}
+
+#text{
+    position: relative;
+    width: 100%;
+}

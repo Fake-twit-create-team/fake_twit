@@ -12,12 +12,19 @@
 <body>
 
     <div id="twitCreate">
-        <h1>ツイート投稿</h1> 
-        <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
-        <!-- <input type="text" id="text" v-model="text"> -->
-        <div id="error">
-            {{ message }}
-        </div>
+            <p>
+                <label for="userId">ユーザ名：</label>
+                <input type="text" id="userId" v-model="postUserId">
+                <div id="error">
+                    {{ userErrorMessage }}
+                </div>
+            </p>
+            <p>
+                <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
+            </p>
+            <div id="error">
+                {{ message }}
+            </div>
         <button v-on:click="onClick()" type="submit" id="submit">ツイート</button>
         <br>
         <a href="index.html">一覧に戻る</a>
