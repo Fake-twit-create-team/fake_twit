@@ -25,3 +25,12 @@
   white-space: pre-line;
 }
 
+#edittext {
+  position: relative;
+  width:100%;
+}
+
+#error{
+  color: red;
+}
+
