@@ -10,26 +10,25 @@
   </head>
   
   <body>
-    <div id="indexTwitCreate">
-        <div id="twitCreate">
-            <p id="userIdBrobk">
-                <label for="userId">ユーザ名：</label>
-                <input type="text" id="userId" v-model="postUserId">
-                <div id="error">
-                    {{ userErrorMessage }}
-                </div>
-            </p>
-            <p>
-                <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
-            </p>
+    <div id="twitCreate">
+        <p id="userIdBrobk">
+            <label for="userId">ユーザ名：</label>
+            <input type="text" id="userId" v-model="postUserId">
             <div id="error">
-                {{ message }}
+                {{ userErrorMessage }}
             </div>
-            <button v-on:click="onClick()" type="submit" id="submit">ツイート</button>
-            <br>
+        </p>
+        <p>
+            <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
+        </p>
+        <div id="error">
+            {{ message }}
         </div>
-        <hr>
+        <button v-on:click="onClick()" type="submit" id="submit">ツイート</button>
+        <br>
     </div>
+    <hr>
+
 
     <div id="app">
       <h1>ツイート一覧</h1>
