@@ -5,13 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/twitCreate.css">
     <title>ツイート一覧</title>
   </head>
   
   <body>
+    <div id="indexTwitCreate">
+        <div id="twitCreate">
+            <p id="userIdBrobk">
+                <label for="userId">ユーザ名：</label>
+                <input type="text" id="userId" v-model="postUserId">
+                <div id="error">
+                    {{ userErrorMessage }}
+                </div>
+            </p>
+            <p>
+                <textarea id="text" cols="100" rows="6" v-model="text"></textarea>
+            </p>
+            <div id="error">
+                {{ message }}
+            </div>
+            <button v-on:click="onClick()" type="submit" id="submit">ツイート</button>
+            <br>
+        </div>
+        <hr>
+    </div>
+
     <div id="app">
       <h1>ツイート一覧</h1>
-      <a href="twitCreate.html">新規作成</a>
       <div id="post" v-for="tweet in tweets">
         <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
         <p>{{ tweet.post_text }}</p>
@@ -22,6 +43,7 @@
     </div>
     <script src="https:/unpkg.com/vue@3.1.5"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/twitCreate.js"></script>
   </body>
   </html>
   
