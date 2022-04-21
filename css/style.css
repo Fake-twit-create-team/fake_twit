@@ -2,15 +2,26 @@
   text-align: center;
 }
 
-#post{
-  text-align: left;
-  padding: 1em 1em;
+#thread{
   margin: auto;
-  color: #5d627b;
+  padding: 1em 1em;
+  color: #616680;
   background: white;
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   width: 50%;
+}
+
+#post{
+  position: relative;
+  text-align: left;
+  padding: .5em .5em;
+  margin: auto;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #aab1cf;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  width: 95%;
   white-space: pre-line;
 }
 
@@ -22,3 +33,4 @@
 #error{
   color: red;
 }
+
