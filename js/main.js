@@ -13,14 +13,26 @@ const app = Vue.createApp({
     })
     .then(data => {
       var n = 0;
-      for(var i=data.length-1; i>=0; i--){
+      var tweetListPre = [];
+      var tweetListCil = [];
+      for(var i=0; i<data.length; i++){
+        if(data[i].REPLY_POST_ID == null){
+          tweetListPre.push(data[i]);
+        }else{
+          tweetListCil.push(data[i]);
+        }
+      }
+      // console.log(tweetListPre.length)
+      // console.log(tweetListCil.length)
+      for(var i=tweetListPre.length-1; i>=0; i--){
         let tweet = {
           soeji: n,
-          post_id: data[i].id,
-          post_user_id: data[i].POST_USER_ID,
-          post_datetime: data[i].POST_DATETIME,
-          post_text: data[i].POST_TEXT,
-          post_fav_cnt: data[i].POST_FAV_CNT,
+          post_id: tweetListPre[i].id,
+          post_user_id: tweetListPre[i].POST_USER_ID,
+          post_datetime: tweetListPre[i].POST_DATETIME,
+          post_text: tweetListPre[i].POST_TEXT,
+          post_fav_cnt: tweetListPre[i].POST_FAV_CNT,
+          url: "twitCreate.html?id="+tweetListPre[i].id,
           is_edit_mode: false,
           post_text_bef_edit: data[i].POST_TEXT,
           message: ''
