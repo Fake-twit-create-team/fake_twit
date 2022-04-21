@@ -15,8 +15,11 @@
       <div id="post" v-for="tweet in tweets">
         <p>{{ tweet.post_user_id }} {{ tweet.post_datetime }}</p>
         <p>{{ tweet.post_text }}</p>
-        <button v-on:click="createFavorite(tweet.soeji)">いいね</button>
-        {{ tweet.post_fav_cnt }}
+        <div id="button">
+          <button v-on:click="createFavorite(tweet.soeji)">いいね</button>
+          {{ tweet.post_fav_cnt }}
+          <a :href=tweet.url>返信</a>
+        </div>
       </div>
       <!-- <p>{{ $data }}</p> -->
     </div>
