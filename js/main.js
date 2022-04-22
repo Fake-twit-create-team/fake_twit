@@ -39,7 +39,7 @@ const app = Vue.createApp({
           post_fav_cnt: tweetListPre[i].POST_FAV_CNT,
           url: "twitCreate.html?id="+tweetListPre[i].id,
           is_edit_mode: false,
-          post_text_bef_edit: data[i].POST_TEXT,
+          post_text_bef_edit: tweetListPre[i].POST_TEXT,
           message: ''
         };
         thread.threadUrl = "twitCreate.html?id="+tweetListPre[i].id;
@@ -54,7 +54,10 @@ const app = Vue.createApp({
               post_user_id: tweetListCil[m].POST_USER_ID,
               post_datetime: tweetListCil[m].POST_DATETIME,
               post_text: tweetListCil[m].POST_TEXT,
-              post_fav_cnt: tweetListCil[m].POST_FAV_CNT
+              post_fav_cnt: tweetListCil[m].POST_FAV_CNT,
+              is_edit_mode: false,
+              post_text_bef_edit: tweetListCil[m].POST_TEXT,
+              message: ''
             };
             thread.tweets.push(tweet);
             this.tweets.push(tweet);
