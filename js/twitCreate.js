@@ -10,8 +10,8 @@ const twit = Vue.createApp({
             this.message = ''
             this.userErrorMessage = ''
 
-            if(this.postUserId.length > 128){
-                this.userErrorMessage = 'ユーザ名は128文字以内で入力してください'
+            if(this.postUserId.length > 16){
+                this.userErrorMessage = 'ユーザ名は16文字以内で入力してください'
                 return
             }
             if(this.text.length > 140){
